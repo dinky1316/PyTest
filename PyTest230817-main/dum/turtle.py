@@ -1,13 +1,3 @@
-print("hello python")
-
-a=1
-print(type(a))
-print("출력형식 %d"%(a))
-
-# print("이메일을 입력해주세요")
-# email=input()
-# print(f"이메일 : {email}")
-
 import turtle as t
 
 t.shape('turtle')
@@ -18,7 +8,14 @@ n = 50
 t.color("white")
 t.speed(0)
 
+t.up()
+t.left(90)
+t.forward(100)
+t.right(90)
+
 for i in range(1):
+
+   t.down()
 
    for i in range(n):
       t.circle(80)
