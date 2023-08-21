@@ -1,8 +1,8 @@
-print("hello python")
+# print("hello python")
 
-a=1
-print(type(a))
-print("출력형식 %d"%(a))
+# a=1
+# print(type(a))
+# print("출력형식 %d"%(a))
 
 # print("이메일을 입력해주세요")
 # email=input()
@@ -28,7 +28,7 @@ for i in range(1):
    t.up()
 
    for i in range(n):
-      t.circle(50)
+      t.circle(0)
       t.left(10)
       t.forward(20)
 
