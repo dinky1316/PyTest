@@ -1,11 +1,12 @@
-inFp, outFp = None, None 
+inFp, outFp = None, None
 inStr = ""
 
+# ini를 문자열로 읽어서 복사
 inFp = open("C:/Windows/win.ini", "r")
 outFp = open("C:/Temp/data3.txt", "w")
 
 inList = inFp.readlines()
-for inStr in inList :
+for inStr in inList:
     outFp.writelines(inStr)
 
 inFp.close()

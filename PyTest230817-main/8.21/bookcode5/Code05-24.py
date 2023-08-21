@@ -7,7 +7,7 @@ XSIZE, YSIZE = 256, 256
 
 ## 메인 코드 부분 ##
 window = Tk()
-canvas = Canvas(window, height = XSIZE, width = YSIZE)
+canvas = Canvas(window, height=XSIZE, width=YSIZE)
 
 canvas.pack()
 window.mainloop()

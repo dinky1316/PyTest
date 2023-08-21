@@ -1,13 +1,18 @@
-outFp = None 
+outFp = None
 outStr = ""
 
+# w, r 이라든지 b가 빠져있으면, 기본은 텍스트 모드
+# 이미지 처럼 문자가 아닌 이진값을 읽을 때는
+# 모드 b 붙음
+# ex) 쓰기 작업시 : bw
+# ex) 읽기 작업시 : rw
 outFp = open("C:/Temp/data2.txt", "w")
 
 while True:
     outStr = input("내용 입력 : ")
-    if outStr != "" :
+    if outStr != "":
         outFp.writelines(outStr + "\n")
-    else :
+    else:
         break
 
 outFp.close()
