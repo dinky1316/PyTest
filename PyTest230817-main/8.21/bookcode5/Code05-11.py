@@ -5,18 +5,23 @@ window = Tk()
 
 # 메뉴 부분 구성, mainMenu : 상위 메뉴
 mainMenu = Menu(window)
-mainMenu2 = Menu(window)
+# 메인 메뉴의 부모 창 -> window
 window.config(menu=mainMenu)
-window.config(menu=mainMenu2)
-
+# 파일 메뉴의 부모 창 -> 메인메뉴
 fileMenu = Menu(mainMenu)
-fileMenu2 = Menu(mainMenu2)
+fileMenu2 = Menu(mainMenu)
+
 mainMenu.add_cascade(label="파일", menu=fileMenu)
-mainMenu2.add_cascade(label="파일2", menu=fileMenu2)
+mainMenu.add_cascade(label="파일2", menu=fileMenu2)
+
+# 부모 메뉴 : 파일 1
 fileMenu.add_command(label="열기")
-fileMenu2.add_command(label="열기2")
 fileMenu.add_separator()
 fileMenu.add_command(label="종료")
-fileMenu2.add_command(label="종료2")
+
+# 부모 메뉴 : 파일 2
+fileMenu2.add_command(label="열기")
+fileMenu2.add_separator()
+fileMenu2.add_command(label="종료")
 
 window.mainloop()
