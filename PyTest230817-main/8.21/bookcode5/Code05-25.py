@@ -5,9 +5,13 @@ from tkinter import *
 # 함수 해당 파일명을 매개변수로 지정해서
 # 'rb' -> 이진값으로 읽겠다.
 
+# loadImage : 메모에 있는걸 출력하는 함수
+
 
 def loadImage(fname):
     global inImage, XSIZE, YSIZE
+    # rb : 이진값으로 읽는다. b가 없다면 기본 문자열로 읽는다
+    # inputStream, fileInputStream,
     fp = open(fname, 'rb')
 
     # fp, 인스턴스에서 해당 이미지의 내용이 담겨 있음
@@ -21,6 +25,7 @@ def loadImage(fname):
             # ord : 해당 픽셀의 값을 유니코드의 값으로 리턴
             # int : 정수화
             # data : 한 픽셀에 있는 RGB 값을 의미
+            # print(f"ord의 값 : {ord(fp.read(1))}") # 결과 : 70
             data = int(ord(fp.read(1)))
             # tmpList 임시 리스트에 추가
             tmpList.append(data)
@@ -39,7 +44,6 @@ def loadImage(fname):
     # 3) tmpList의 값
     print(f"\ntmpList의 값 :\n {tmpList}")
     fp.close()
-
 
 # 메모리 상에 있는 이미지의 이차원 배열을 출력하는 부분
 
@@ -86,6 +90,7 @@ paper = PhotoImage(width=XSIZE, height=YSIZE)
 canvas.create_image((XSIZE/2, YSIZE/2), image=paper, state="normal")
 
 # 파일 --> 메모리
+# raw 확장자 이미지는, 일반 이미지랑 다르고, 테스트용으로 만들ㅇ진 흑백사진이다
 filename = 'RAW/tree.raw'  # C:/CookAnalysis/RAW/tree.raw
 loadImage(filename)
 
